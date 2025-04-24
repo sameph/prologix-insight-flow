@@ -1,4 +1,3 @@
-
 import React, { useState, useRef } from "react";
 import { Scan, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -99,13 +98,8 @@ const BarcodeScanner = ({ onScan }: BarcodeScannerProps) => {
             className="absolute inset-0 w-full h-full opacity-0"
           />
           
-          {/* Overlay with scanning animation */}
           <div className="absolute inset-0 pointer-events-none">
-            <div className="w-full h-1 bg-prologix-blue opacity-70 animate-pulse-slow" 
-              style={{ 
-                animation: "scanline 2s linear infinite",
-              }}
-            />
+            <div className="w-full h-1 bg-blue-500 opacity-70 animate-scan" />
           </div>
           
           <Button
@@ -120,19 +114,18 @@ const BarcodeScanner = ({ onScan }: BarcodeScannerProps) => {
             <X className="h-4 w-4" />
           </Button>
           
-          <style jsx>{`
-            @keyframes scanline {
-              0% {
-                transform: translateY(0);
+          <style>
+            {`
+              @keyframes scan {
+                0% { transform: translateY(0); }
+                50% { transform: translateY(100%); }
+                100% { transform: translateY(0); }
               }
-              50% {
-                transform: translateY(100%);
+              .animate-scan {
+                animation: scan 2s linear infinite;
               }
-              100% {
-                transform: translateY(0);
-              }
-            }
-          `}</style>
+            `}
+          </style>
         </div>
       ) : (
         <div className="w-full aspect-video bg-gray-100 rounded-md flex flex-col items-center justify-center border-2 border-dashed border-gray-300">
