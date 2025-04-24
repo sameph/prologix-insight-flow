@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Package, Search, Filter, Plus } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -17,8 +16,20 @@ import {
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useToast } from "@/hooks/use-toast";
 
+type ProductStatus = "in-stock" | "low-stock" | "out-of-stock" | "transit";
+
+interface Product {
+  id: string;
+  name: string;
+  category: string;
+  quantity: number;
+  location: string;
+  daysUntilExpiry: number;
+  status: ProductStatus;
+}
+
 // Mock product data
-const mockProducts = [
+const mockProducts: Product[] = [
   {
     id: "PRD-78321",
     name: "Premium Coffee Beans",
@@ -98,7 +109,7 @@ const Products = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
   const [isScannerOpen, setIsScannerOpen] = useState(false);
-  const [selectedProduct, setSelectedProduct] = useState<typeof mockProducts[0] | null>(null);
+  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [selectedTab, setSelectedTab] = useState("all");
   
   const filteredProducts = mockProducts.filter(product => {
