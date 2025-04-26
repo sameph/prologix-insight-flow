@@ -9,7 +9,8 @@ import {
   AlertCircle, 
   Search,
   Scan,
-  Settings 
+  Settings,
+  LineChart
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
@@ -56,6 +57,16 @@ const Sidebar = ({ isOpen }: SidebarProps) => {
       title: "Customer Feedback",
       href: "/feedback",
       icon: AlertCircle
+    },
+    {
+      title: "Feedback Analytics",
+      href: "/feedback-analytics",
+      icon: LineChart
+    },
+    {
+      title: "Scan Products",
+      href: "/scan",
+      icon: Scan
     }
   ];
   
