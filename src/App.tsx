@@ -10,6 +10,7 @@ import Products from "./pages/Products";
 import Logistics from "./pages/Logistics";
 import Feedback from "./pages/Feedback";
 import FeedbackAnalytics from "./pages/FeedbackAnalytics";
+import Store from "./pages/Store";
 import Login from "./pages/Login";
 import NotFound from "./pages/NotFound";
 
@@ -27,6 +28,7 @@ const App = () => (
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/products" element={<Products />} />
           <Route path="/logistics" element={<Logistics />} />
+          <Route path="/store" element={<Store />} />
           <Route path="/feedback" element={<Feedback />} />
           <Route path="/feedback-analytics" element={<FeedbackAnalytics />} />
           <Route path="*" element={<NotFound />} />

@@ -1,4 +1,3 @@
-
 import { Link, useLocation } from "react-router-dom";
 import { 
   Package, 
@@ -6,8 +5,6 @@ import {
   Store, 
   User, 
   BarChart, 
-  Bookmark, 
-  Settings,
   AlertCircle, 
   Search,
   Scan 
@@ -34,14 +31,14 @@ const Sidebar = ({ isOpen }: SidebarProps) => {
       icon: Package
     },
     {
-      title: "Logistics",
-      href: "/logistics",
-      icon: Truck
-    },
-    {
       title: "Store",
       href: "/store",
       icon: Store
+    },
+    {
+      title: "Logistics",
+      href: "/logistics",
+      icon: Truck
     },
     {
       title: "User Management",
