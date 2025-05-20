@@ -62,11 +62,6 @@ const Sidebar = ({ isOpen }: SidebarProps) => {
       title: "Feedback Analytics",
       href: "/feedback-analytics",
       icon: LineChart
-    },
-    {
-      title: "Scan Products",
-      href: "/scan",
-      icon: Scan
     }
   ];
   

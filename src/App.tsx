@@ -11,6 +11,7 @@ import Logistics from "./pages/Logistics";
 import Feedback from "./pages/Feedback";
 import FeedbackAnalytics from "./pages/FeedbackAnalytics";
 import Store from "./pages/Store";
+import Users from "./pages/Users";
 import Login from "./pages/Login";
 import NotFound from "./pages/NotFound";
 
@@ -29,6 +30,7 @@ const App = () => (
           <Route path="/products" element={<Products />} />
           <Route path="/logistics" element={<Logistics />} />
           <Route path="/store" element={<Store />} />
+          <Route path="/users" element={<Users />} />
           <Route path="/feedback" element={<Feedback />} />
           <Route path="/feedback-analytics" element={<FeedbackAnalytics />} />
           <Route path="*" element={<NotFound />} />
