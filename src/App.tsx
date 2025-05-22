@@ -27,10 +27,17 @@ const queryClient = new QueryClient({
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
-    <ThemeProvider defaultTheme="light" storageKey="prologix-theme">
+    <ThemeProvider defaultTheme="system" storageKey="prologix-theme">
       <TooltipProvider>
         <Toaster />
-        <Sonner position="top-right" closeButton theme="light" />
+        <Sonner 
+          position="top-right" 
+          closeButton 
+          toastOptions={{
+            className: "rounded-lg shadow-lg border",
+            duration: 3000,
+          }}
+        />
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Index />} />
